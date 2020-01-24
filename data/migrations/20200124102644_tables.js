@@ -41,7 +41,7 @@ exports.up = function(knex) {
         .createTable('project-resources', tbl => {
             tbl.primary(["project_id", "resources_id"])
 
-            tbl.integer('project-id')
+            tbl.integer('project_id')
                 .unsigned()
                 .notNullable()
                 .references('id')
