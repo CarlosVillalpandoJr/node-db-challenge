@@ -36,6 +36,12 @@ exports.up = function(knex) {
             tbl.boolean('completed')
                 .defaultTo(0)
                 .notNullable()
+
+            tbl.integer('project_id')
+                .unsigned()
+                .notNullable()
+                .references('id')
+                .inTable('projects')
         })
 
         .createTable('project-resources', tbl => {
